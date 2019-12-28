@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <title>{{ TITLE }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+
+<body>
+
+    <h1>{{ TITLE }}</h1>
+
+    <hr>
+
+    <div class="menu">
+        {% for item in MENU %}
+        <div class="item">
+            <a href="{{ url_for(item['page']) }}">{{item['title']}}</a>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="content">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <hr>
+
+</body>
+
+
+</html>

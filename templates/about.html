@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<br>
+
+{% for person in PEOPLE %}
+    {% set name = person['name'] %}
+    {% set title = person['title'] %}
+    {% set desc = person['descript'] %}
+    {% set email = person['email'] %}
+    {% set IMG = url_for('static', filename="images/" + person['img']) %}
+    <div class="person">
+        <img src="{{ IMG }}" alt="{{ title }}">
+        <h2>{{ name }}</h2>
+        <div>{{ title }}</div>
+        <p>{{ desc }}</p>
+        <div class="mail">{{ email }}</div>
+        <br><hr><br>
+    </div>
+{% endfor %}
+
+<br>
+
+{% endblock %}
