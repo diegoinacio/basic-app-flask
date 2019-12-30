@@ -9,3 +9,10 @@ CREATE TABLE person (
     email varchar(64),
     img varchar(64)
 );
+
+DROP TABLE IF exists maillist;
+CREATE TABLE maillist (
+    id integer primary key autoincrement,
+    fullname text not null,
+    email varchar(64)
+);
